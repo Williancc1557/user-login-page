@@ -1,4 +1,3 @@
-import { isStrongPassword } from "@techmmunity/utils";
 import { InvalidPasswordError } from "./errors/invalid-password";
 
 export class Password {
@@ -12,8 +11,15 @@ export class Password {
     }
 
     public static validate(password: string) {
-        const isPasswordValidate: boolean = isStrongPassword(password);
-        if (!isPasswordValidate) return false;
+        const maxPasswordLength = 30;
+        const minPasswordLength = 8;
+        const upperCaseCheck = /[A-Z]/;
+
+        if (password.length > maxPasswordLength) return false;
+        if (password.length < minPasswordLength) return false;
+        if (!password.match(upperCaseCheck)) return false;
+
+
         return true;
     }
 }

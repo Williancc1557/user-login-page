@@ -16,6 +16,14 @@ export class Email {
 
         if (!isEmailValid) return false;
 
+        const [emailBeforeSimbol, emailAfterSimbol] = email.split("@");
+
+        const maxLengthEmailBeforeSimbol = 64;
+        const maxLengthEmailAfterSimbol = 255;
+
+        if (emailBeforeSimbol.length > maxLengthEmailBeforeSimbol) return false;
+        if (emailAfterSimbol.length > maxLengthEmailAfterSimbol) return false;
+
         return true;
     }
 }

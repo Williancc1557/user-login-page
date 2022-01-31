@@ -3,7 +3,7 @@ import { Password } from "./password";
 import type { UserData } from "./user-data";
 
 export class User {
-    public constructor(
+    private constructor(
         private readonly email: Email,
         private readonly password: Password
     ) { }
