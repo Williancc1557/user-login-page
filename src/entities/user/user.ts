@@ -23,6 +23,5 @@ export class User {
         const password = passwordOrError.value;
 
         return right(new User(email, password));
-
     }
 }

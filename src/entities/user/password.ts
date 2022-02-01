@@ -21,7 +21,6 @@ export class Password {
         if (password.length < minPasswordLength) return false;
         if (!password.match(upperCaseCheck)) return false;
 
-
         return true;
     }
 }

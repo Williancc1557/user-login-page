@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules src/main/server.ts",
     "test": "jest"
   },
   "dependencies": {
