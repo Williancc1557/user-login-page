@@ -18,10 +18,8 @@ export class RegisterUserUsecase {
 
         if (userOrError.isLeft()) return left(userOrError.value);
 
+        const user = userOrError.value;
 
-        return right(this.databaseProvider.register({
-            email: data.email,
-            password: data.password,
-        }));
+        return right(this.databaseProvider.register(user));
     }
 }
