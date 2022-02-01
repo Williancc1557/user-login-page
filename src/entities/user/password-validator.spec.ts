@@ -14,7 +14,7 @@ describe("The password validator", () => {
         expect(Password.validate("willian123")).toBe(false);
     });
 
-    test("This titles in tests password-validator.spec.ts file was updated", () => {
+    test("This titles in this tests password-validator.spec.ts file was updated", () => {
         expect(Password.validate("Willian123")).toBe(true);
     });
 });

@@ -1,3 +1,5 @@
+import type { Either } from "../../shared/either";
+import { right, left } from "../../shared/either";
 import { InvalidPasswordError } from "./errors/invalid-password";
 
 export class Password {
@@ -5,9 +7,9 @@ export class Password {
         private readonly password: string
     ) { }
 
-    public static create(password: string): Password {
-        if (!Password.validate(password)) new InvalidPasswordError(password);
-        return new Password(password);
+    public static create(password: string): Either<InvalidPasswordError, Password> {
+        if (!Password.validate(password)) return left(new InvalidPasswordError(password));
+        return right(new Password(password));
     }
 
     public static validate(password: string) {

@@ -1,4 +1,6 @@
 import { isEmail } from "@techmmunity/utils";
+import type { Either } from "../../shared/either";
+import { left, right } from "../../shared/either";
 import { InvalidEmailError } from "./errors/invalid-email";
 
 export class Email {
@@ -6,9 +8,9 @@ export class Email {
         private readonly email: string,
     ) { }
 
-    public static create(email: string) {
-        if (!Email.validate(email)) new InvalidEmailError(email);
-        return new Email(email);
+    public static create(email: string): Either<InvalidEmailError, Email> {
+        if (!Email.validate(email)) return left(new InvalidEmailError(email));
+        return right(new Email(email));
     }
 
     public static validate(email: string): boolean {
