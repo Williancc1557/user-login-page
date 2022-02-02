@@ -1,4 +1,4 @@
-export interface IRegisterUserDTO {
+export interface RegisterUserData {
     email: string;
     password: string;
 }

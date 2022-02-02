@@ -7,9 +7,9 @@ import { Password } from "./password";
 import type { UserData } from "./user-data";
 
 export class User {
-    private constructor(
-        private readonly email: Email,
-        private readonly password: Password
+    public constructor(
+        public readonly email: Email,
+        public readonly password: Password
     ) { }
 
     public static create(userData: UserData): Either<InvalidEmailError | InvalidPasswordError, User> {

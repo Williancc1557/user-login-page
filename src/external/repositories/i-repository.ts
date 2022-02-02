@@ -1,8 +1,6 @@
-import type { User } from "../../entities/user/user";
-import type { Either } from "../../shared/either";
-import type { UserNotExistsError } from "./erros/user-not-exists-error";
+import type { RegisterUserData } from "../../usecase/register-user/register-user-dto";
 
 export interface IRepository {
-    exists: (email: string) => Either<UserNotExistsError, User>;
-    register: (user: User) => User;
+    getUserByEmail: (email: string | undefined) => RegisterUserData;
+    register: (user: RegisterUserData) => RegisterUserData;
 }

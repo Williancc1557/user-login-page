@@ -5,7 +5,7 @@ describe("The password validator", () => {
         expect(Password.validate("Willian123")).toBe(true);
     });
 
-    test("Should not accept a password with more 120 chars", () => {
+    test("Should not accept a password with more 30 chars", () => {
         const password = "cC".repeat(120);
         expect(Password.validate(password)).toBe(false);
     });

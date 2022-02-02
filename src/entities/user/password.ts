@@ -12,6 +12,10 @@ export class Password {
         return right(new Password(password));
     }
 
+    public get value() {
+        return this.password;
+    }
+
     public static validate(password: string) {
         const maxPasswordLength = 30;
         const minPasswordLength = 8;

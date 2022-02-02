@@ -16,6 +16,4 @@ export default (app: Express): void => {
             (await import(`../routes/${file}`)).default(router);
         }
     });
-
-
 };
