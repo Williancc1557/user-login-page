@@ -13,6 +13,10 @@ export class Email {
         return right(new Email(email));
     }
 
+    public get value(): string {
+        return this.email;
+    }
+
     public static validate(email: string): boolean {
         const isEmailValid = isEmail(email);
 
